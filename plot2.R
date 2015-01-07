@@ -11,6 +11,6 @@ data$Date <- as.Date(data$Date, format="%d/%m/%Y")
 #Extracting data from the dates 2007-02-01 and 2007-02-02
 dataWithinPeriod <- subset(data, subset=(Date >= "2007-02-01" & Date <= "2007-02-02"))
 #Convert the Date and Time variables using as.Date() and as.POSIXct()
-dateTime <- paste(as.Date(data$Date), data$Time)
+dateTime <- paste(as.Date(dataWithinPeriod$Date), dataWithinPeriod$Time)
 dataWithinPeriod$DateTime <- as.POSIXct(dateTime)
 
